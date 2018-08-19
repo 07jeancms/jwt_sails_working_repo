@@ -19,11 +19,30 @@ function generatePasswordHash(password) {
 
 module.exports = {
 
+	//migrate: 'safe',
+	tableName: 'user',
+
+	meta: {
+		schemaName: 'user'
+	},
+
 	attributes: {
 		email: {
 			type: 'email',
 			required: true,
 			unique: true
+		},
+
+		encryptedPassword: {
+			type: 'password'
+		},
+
+		lastPasswordFailure: {
+			type: 'datetime'
+		},
+
+		resetToken: {
+			type: 'string'
 		},
 
 		role: {
@@ -39,14 +58,6 @@ module.exports = {
 		passwordFailures: {
 			type: 'integer',
 			defaultsTo: 0
-		},
-
-		lastPasswordFailure: {
-			type: 'datetime'
-		},
-
-		resetToken: {
-			type: 'string'
 		},
 
 		toJSON: function () {
