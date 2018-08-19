@@ -1,0 +1,59 @@
+{
+  "data": {
+    "user": [
+      {
+        "email": "jeanca@gmail.com",
+        "role": "user",
+        "locked": false,
+        "passwordFailures": 0,
+        "encryptedPassword": "$2b$10$celejlrp6mgH9roPg/szkebDNy8vDiLkZiIIBBOqoDuTawHnf7ccO",
+        "createdAt": "2018-08-19T20:12:00.969Z",
+        "updatedAt": "2018-08-19T20:12:00.969Z",
+        "id": 1
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "role": {
+        "type": "string",
+        "defaultsTo": "user"
+      },
+      "locked": {
+        "type": "boolean",
+        "defaultsTo": false
+      },
+      "passwordFailures": {
+        "type": "integer",
+        "defaultsTo": 0
+      },
+      "lastPasswordFailure": {
+        "type": "datetime"
+      },
+      "resetToken": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 1
+    }
+  }
+}
